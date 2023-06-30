@@ -10,3 +10,5 @@ public class MailConfig {
     private final String mailApiKey;
 
 }
+
+//public ecord Mailconfig(String mailApiKey, int id){}

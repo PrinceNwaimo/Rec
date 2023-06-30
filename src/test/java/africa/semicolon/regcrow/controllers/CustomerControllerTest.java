@@ -60,7 +60,7 @@ class CustomerControllerTest {
     void updateCustomerDetailsTest() throws Exception {
         UpdateCustomerRequest updateCustomerRequest = new UpdateCustomerRequest();
         updateCustomerRequest.setAccountName("new_guy");
-        var image = new MockMultipartFile("test",new FileInputStream("C:\\Users\\semicolon\\Documents\\java_workspace\\regcrow\\src\\test\\resources\\assets\\goat.jpg"));
+        var image = new MockMultipartFile("test",new FileInputStream("C:\\Users\\USER\\IdeaProjects\\regcrow2\\src\\test\\resources\\assets\\goat.jpg"));
         ObjectMapper mapper = new ObjectMapper();
         MockHttpServletRequestBuilder builder =
                 MockMvcRequestBuilders.multipart(HttpMethod.PATCH, "/api/v1/customer")

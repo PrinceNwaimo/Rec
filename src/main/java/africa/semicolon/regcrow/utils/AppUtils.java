@@ -40,7 +40,7 @@ public class AppUtils {
 
     public static final String ACTIVATE_ACCOUNT_URL = "localhost:8080/api/v1/customer/verify";
 
-    public static final String MAIL_TEMPLATE_LOCATION = "C:\\Users\\semicolon\\Documents\\java_workspace\\regcrow\\src\\main\\resources\\static\\activation.txt";
+    public static final String MAIL_TEMPLATE_LOCATION = "C:\\Users\\USER\\IdeaProjects\\regcrow2\\src\\main\\resources\\static\\activation.txt";
 
     public static final String API_KEY_VALUE = "api-key";
 

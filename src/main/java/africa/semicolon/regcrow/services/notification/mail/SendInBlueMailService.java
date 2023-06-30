@@ -33,5 +33,6 @@ public class SendInBlueMailService implements MailService{
                 restTemplate.postForEntity(EMAIL_URL, entity, SendMailResponse.class);
 
         return response.getBody();
+
     }
 }
