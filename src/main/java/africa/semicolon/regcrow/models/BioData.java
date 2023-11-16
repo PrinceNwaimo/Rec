@@ -18,6 +18,7 @@ import static jakarta.persistence.EnumType.STRING;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+//@Table(name = "data")
 public class BioData {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

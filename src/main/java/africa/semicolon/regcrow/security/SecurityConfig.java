@@ -15,6 +15,7 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
@@ -40,13 +41,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-                .csrf(c->c.disable())
+                .csrf(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults())
                 .sessionManagement(c->c.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterAt(new RegcrowAuthenticationFilter(authenticationManager, jwtUtil), UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests(c->c.requestMatchers(POST, "/api/v1/customer")
                         .permitAll())
-                .authorizeHttpRequests(c->c.requestMatchers(POST, "/api/login")
+                .authorizeHttpRequests(c->c.requestMatchers(POST, "/api/v1/login")
                         .permitAll())
                 .authorizeHttpRequests(c->c.requestMatchers(PATCH, "/api/v1/customer")
                         .hasRole(Role.CUSTOMER.name()))
